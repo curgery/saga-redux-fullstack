@@ -9,6 +9,6 @@ import { addNewTask, updateTask } from './server';
 
     await updateTask({
         id:"12346",
-        name:"My task   UPDATED!!!!"
+        name:"My task   UPDATED AGAIN!!!!"
     })
 })();

@@ -12,7 +12,7 @@ import { Redirect } from 'react-router';
 const RouteGuard = Component =>({match})=>{
     console.info("Route guard", match);
     if (!store.getState().session.authenticated) {
-            return <Redirect to="/"></Redirect>
+            return <Redirect to="/" />;
     } {
 
     }

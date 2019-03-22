@@ -2,6 +2,7 @@ import { take, put, select } from 'redux-saga/effects';
 import uuid from 'uuid';
 import axios from 'axios';
 import { history } from './history';
+
 import * as mutations from './mutations';
 
 const url = "http://localhost:7777";
@@ -14,7 +15,7 @@ export function* taskCreationSaga(){
         const ownerID = `UI`;
         const taskID = uuid();
         yield put(mutations.createTask(taskID, groupID, ownerID));
-        const { res } = yield axios.post(url + '/task/new', {
+        const { res } = yield axios.post(url + `/task/new`, {
             task: {
                 id:taskID,
                 group: groupID,
@@ -33,10 +34,10 @@ export function* taskModificationSaga() {
             mutations.SET_TASK_NAME,
             mutations.SET_TASK_COMPLETE
         ]);
-        axios.post(url + '/task/update', {
+        axios.post(url + `/task/update`, {
             task:{
                 id: task.taskID,
-                group: task.groupI,
+                group: task.groupID,
                 name: task.name,
                 isComplete: task.isComplete
 
