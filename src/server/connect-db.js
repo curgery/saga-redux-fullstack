@@ -11,4 +11,4 @@ export async function connectDB(){
 }
 
 
-connectDB();
+// connectDB();
